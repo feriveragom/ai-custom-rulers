@@ -1,0 +1,782 @@
+---------------------------------------
+
+---------------------------------------
+git remote add origin https://github.com/feriveragom/ng-my-notes.git
+git branch -M main
+git push -u origin main
+---------------------------------------
+
+"schematics": {
+        "@schematics/angular:component": {
+          "style": "css",
+          "skipTests": true,
+          "inlineTemplate": false,
+          "inlineStyle": false
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:resolver": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
+
+---------------------------------------
+Extensión en VSCode
+	Angular Language Service
+	
+Creación de un proyecto reutilizando carpeta node_modules en angular
+	ng new shape-up --routing=true --style=scss --skip-install
+	cp -r node_modules shape-up/
+	cd shape-up
+	ng serve
+	
+Creación de mi primer proyecto en Angular siguiendo un tutorial
+https://www.youtube.com/watch?v=l8oOg5CiNO8
+	ng new my-notes-app
+	CSS -> Si
+	SSR -> No
+		Packages installed successfully.
+		Successfully initialized git.	
+	cd my-notes-app		
+	ng serve
+---------------------------------------
+Instalación de Angular
+
+1- Instalar NVM (Node Version Manager)
+	https://github.com/coreybutler/nvm-windows/releases
+	https://github.com/coreybutler/nvm-windows/releases/tag/1.2.2
+		https://github.com/coreybutler/nvm-windows/releases/download/1.2.2/nvm-setup.exe
+		
+2- Instalar Node.js y NPM usando NVM	
+		
+	nvm install --lts
+		// para una versión específica
+		// nvm install 22.14.0
+	nvm use 22.14.0
+	node -v 
+		// v22.14.0
+	npm -v
+		// 10.9.2
+		
+3- Instalar Angular CLI (última versión)
+	npm install -g @angular/cli
+	ng version
+---------------------------------------
+Por favor, revisa/optimiza/actualiza la sección "Configuración de Firebase" del README.md que empieza con:
+"### Configuración de Firebase
+
+
+te hare una pregunta, considerando que mi readme tiene 1330 lineas de descripcion y codigo, que tu memoria es limitada y que no estamos tratando todos los temas a la vez, hay forma que te indique que debes leer de ahi para que revises/edits/actualices/amplies/escribas solo en la seccion del documento readme de interes, y no tengas que estar leyendotelo completo
+
+propmt IA
+angular sera colateral, lo ire aprendiendo en la medida que vayamos tirando codigo, solo no me tires tu el codigo, explicame las propuestas para que las pueda entender
+el proyecto ira de 3 cosas, 
+1- aprendere angular ya que estaremos haciendo el proyecto en angular, que deseo subirlo y desplegarlo para usarlo en github, eso lo haremos mas adelante, y no se como, encontraremos alguna via gratis que nos sirva de base de datos para persistir los datos
+2- el proyecto sera una herramienta para facilitarme la vida con shape up, sera sobre como es mejor trabajar con shape up
+3- esto necesito que lo entiendas bien, no te confundas, estoy aprendiendo angular pero en el proyecto habra un espacio tecnico, mas alla del negocio donde pondre componentes y soluciones personalizadas para que tu la IA, pueda verla y aplicar esas soluciones como primera propuesta ante problemas similares ya que tratare de enlazar los requerimientos con las soluciones todo en este proyecto y el lenguaje que usare sera elixir y phoenix liveview, imortante, habran 2 espacios, el de negocio/requerimientos y su gestion y el espacio tecnico para poder saber que en tlal fecha a este requerimiento que se parece a aquel podemos reutilizar de aqui
+
+Plan de Desarrollo - Shape Up Manager
+Fase 1: Fundamentos y Estructura (2 semanas)
+Configuración del proyecto y estructura básica
+Diseño del modelo de datos para ciclos Shape Up
+Implementación de navegación principal
+Creación del panel de control (dashboard)
+Fase 2: Gestión de Ciclos Shape Up (2 semanas)
+Componente de creación/edición de ciclos de 6 semanas
+Sistema de pitches/propuestas
+Seguimiento diario con reportes de logros/bloqueos
+Visualización de progreso del ciclo
+Fase 3: Biblioteca Técnica Elixir/Phoenix (2 semanas)
+Estructura para almacenar soluciones técnicas
+Sistema de etiquetado/categorización
+Vinculación entre requerimientos y soluciones
+Exportación/importación de soluciones
+Fase 4: Integración y Despliegue (1 semana)
+Integración de persistencia (Firebase/Supabase)
+Preparación para GitHub Pages
+Optimización y pruebas
+Despliegue final
+
+Plan por Tópicos - Shape Up Manager
+Fundamentos y Estructura
+Configuración del proyecto Angular
+Arquitectura de componentes
+Modelo de datos para Shape Up
+Sistema de navegación y rutas
+Diseño responsive con SCSS
+Gestión de Ciclos Shape Up
+Creación y configuración de ciclos de 6 semanas
+Sistema de pitches y propuestas
+Tablero de seguimiento de trabajo
+Reportes diarios (logros/bloqueos/próximos pasos)
+Visualización de progreso y métricas
+Biblioteca Técnica Elixir/Phoenix
+Repositorio de soluciones técnicas
+Sistema de catalogación y búsqueda
+Vinculación entre requerimientos y soluciones implementadas
+Documentación de componentes reutilizables
+Ejemplos de código con sintaxis destacada
+Integración y Funcionalidades Avanzadas
+Persistencia de datos (soluciones gratuitas)
+Exportación/importación de datos
+Despliegue en GitHub Pages
+Compartir/colaborar en propuestas
+
+Comenzaremos con los Fundamentos y Estructura, específicamente con:
+Comprensión de la estructura básica del proyecto Angular
+Configuración inicial y personalización
+Creación del modelo de datos para Shape Up
+Implementación de la navegación principal
+Esta base nos permitirá entender Angular mientras construimos los cimientos de la aplicación.
+
+
+Elementos principales para visualizar
+Ciclo actual
+Estado: Activo, cooldown, preparación
+Fechas de inicio/fin
+Días restantes (cuenta regresiva)
+Progreso general (porcentaje)
+Apuestas activas (trabajos del ciclo actual)
+Vista de tarjetas con cada proyecto/propuesta aprobada
+Equipo asignado
+Estado usando Hill Charts
+Indicador visual para bloqueadores/riesgos
+Propuestas pendientes
+Propuestas moldeadas esperando la próxima reunión
+Propuestas en proceso de moldeado (shaping)
+Categorización por impacto/prioridad
+Sistema de seguimiento
+Hill Charts
+Visualización del progreso en forma de colina
+Histórico de movimiento (últimas 2-3 actualizaciones)
+Capacidad para añadir notas/comentarios a cada punto
+Desglose de alcance
+Lista de elementos principales de cada apuesta
+Indicadores de estado (pendiente, en progreso, completado, descartado)
+Capacidad para marcar elementos como "fuera de alcance"
+Línea temporal retrospectiva
+Visualización de los últimos 3-4 ciclos
+Rendimiento histórico (compromisos vs. entregas)
+Patrones de trabajo completado
+Control de calidad
+Definición de "Terminado"
+Checklist personalizable por proyecto
+Verificación de criterios de aceptación
+Validación de calidad técnica
+Detección de riesgos
+Alertas para trabajos estancados (sin movimiento en Hill Chart)
+Indicadores de elementos que podrían no completarse a tiempo
+Gestión de proyectos
+Biblioteca de apuestas pasadas
+Archivo de ciclos anteriores con resultados
+Capacidad para reintroducir apuestas no seleccionadas
+Panel de planificación
+Calendario futuro de ciclos
+Capacidad para preasignar temas a ciclos futuros
+Gestión de equipos
+Visualización de equipos activos
+Disponibilidad para próximo ciclo
+Interfaz y experiencia
+Diseño limpio enfocado en datos clave
+Vista adaptable para diferentes roles (líderes vs. equipo)
+Acceso móvil para actualizaciones rápidas
+Notificaciones para eventos importantes (inicio/fin de ciclo, riesgos)
+------------------------------------------
+Registrar app
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDSfAXVup4n1pJO0E1YyhvaBGNEjuGUSyA",
+  authDomain: "angular-firebase-hub.firebaseapp.com",
+  projectId: "angular-firebase-hub",
+  storageBucket: "angular-firebase-hub.firebasestorage.app",
+  messagingSenderId: "160686726501",
+  appId: "1:160686726501:web:06b10a1a80bc4ac017958c",
+  measurementId: "G-LYX5ZWD3Z6"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+
+------------------------------------------
+Specify your site in firebase.json
+{
+  "hosting": {
+    "site": "angular-firebase-hub",
+
+    "public": "public",
+    ...
+  }
+}
+------------------------------------------
+
+## 1. Configuración Inicial (una sola vez)
+
+```bash
+# Instalar Firebase CLI globalmente
+npm install -g firebase-tools
+
+# Iniciar sesión en Firebase
+firebase login
+```
+
+## 2. Crear Proyecto en Firebase
+
+1. Ir a [Firebase Console](https://console.firebase.google.com)
+2. Crear un nuevo proyecto (ej: "mi-proyecto-angular")
+3. Registrar una aplicación web (botón "</>")
+4. Copiar la configuración para el siguiente paso
+
+## 3. Configuración en el Proyecto Angular
+
+```bash
+# Instalar dependencias
+npm install firebase @angular/fire
+```
+
+**environment.development.ts y environment.ts**:
+```typescript
+export const environment = {
+  production: false, // true en environment.ts
+  firebase: {
+    apiKey: "xxx",
+    authDomain: "mi-proyecto.firebaseapp.com",
+    projectId: "mi-proyecto",
+    storageBucket: "mi-proyecto.appspot.com",
+    messagingSenderId: "xxx",
+    appId: "xxx"
+  }
+};
+```
+
+**app.config.ts**:
+```typescript
+import { ApplicationConfig } from '@angular/core';
+import { provideRouter } from '@angular/router';
+import { provideHttpClient } from '@angular/common/http';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { getAuth, provideAuth } from '@angular/fire/auth';
+import { environment } from '../environments/environment';
+
+export const appConfig: ApplicationConfig = {
+  providers: [
+    provideRouter(routes),
+    provideHttpClient(),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore()),
+    provideAuth(() => getAuth())
+  ]
+};
+```
+
+## 4. Inicializar Firebase en el Proyecto
+
+```bash
+# Dentro de la carpeta del proyecto Angular
+firebase init
+```
+
+Seleccionar las opciones necesarias:
+- ? **Hosting**: Para desplegar tu aplicación
+- ? **Firestore**: Si usarás base de datos
+- ? **Storage**: Si necesitas almacenamiento de archivos
+- ? Usar proyecto existente
+- Seleccionar el proyecto creado en paso 2
+- Directorio público: `dist/[nombre-proyecto]/browser`
+- Configurar como SPA: Sí
+- Sobrescribir index.html: No
+
+## 5. Configurar el Despliegue Automático con GitHub
+
+```bash
+firebase init hosting:github
+```
+
+Respuestas recomendadas:
+- Repositorio: `tu-usuario/tu-repositorio`
+- Script de build: `npm ci && ng build`
+- Despliegue automático: Sí
+- Rama principal: `main`
+
+## 6. Actualizar .gitignore
+
+```bash
+#Firebase
+.firebase/.cache
+```
+
+
+## 7. Configuración Importante
+
+**firebase.json** (verificar que la ruta sea correcta):
+```json
+{
+  "hosting": {
+    "public": "dist/[nombre-proyecto]/browser",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
+```
+
+## 8. Despliegue Manual (si es necesario)
+
+```bash
+# Construir la aplicación
+ng build
+
+# Desplegar a Firebase
+firebase deploy --only hosting
+```
+
+## 9. Verificar Despliegue
+
+```bash
+# Listar canales de hosting
+firebase hosting:channel:list
+
+# Ver URLs disponibles
+firebase hosting:sites list
+```
+
+Tu aplicación estará disponible en:
+- `https://[tu-proyecto-id].web.app`
+- `https://[tu-proyecto-id].firebaseapp.com`
+
+## 10. Solución de Problemas Comunes
+
+### Error "Page Not Found" después de despliegue exitoso
+
+```bash
+# Crear un canal de preview para pruebas
+firebase hosting:channel:deploy preview --expires 1h
+
+# Si el preview funciona pero el live no, clonar preview a live
+firebase hosting:clone [proyecto-id]:preview [proyecto-id]:live
+```
+
+### Error "Directory not found" durante el despliegue
+
+Verificar que:
+1. La carpeta `dist/[nombre-proyecto]/browser` existe (ejecutar `ng build`)
+2. La ruta en `firebase.json` coincide exactamente con la estructura de carpetas
+
+### Errores con archivos de environment
+
+```bash
+# Limpiar caché de Angular
+rm -rf .angular/cache
+
+# Verificar estructura de archivos
+- src/environments/environment.ts (producción)
+- src/environments/environment.development.ts (desarrollo)
+
+# Actualizar angular.json con fileReplacements
+"configurations": {
+  "production": {
+    "fileReplacements": [
+      {
+        "replace": "src/environments/environment.development.ts",
+        "with": "src/environments/environment.ts"
+      }
+    ]
+  }
+}
+```
+
+### Despliegue automático falla en GitHub Actions
+
+Verificar que:
+1. El archivo `.github/workflows/firebase-hosting-merge.yml` existe
+2. Incluye los pasos para instalar Angular CLI y Node.js:
+
+```yaml
+steps:
+  - uses: actions/checkout@v4
+  - name: Set up Node.js
+    uses: actions/setup-node@v4
+    with:
+      node-version: '20'
+      cache: 'npm'
+  - name: Install dependencies
+    run: |
+      npm ci
+      npm install -g @angular/cli
+  - name: Build
+    run: ng build
+  - name: Deploy to Firebase
+    uses: FirebaseExtended/action-hosting-deploy@v0
+    with:
+      repoToken: ${{ secrets.GITHUB_TOKEN }}
+      firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_TU_PROYECTO_ID }}
+      channelId: live
+      projectId: tu-proyecto-id
+```
+
+## 11. Comandos Útiles
+
+```bash
+# Rollback al despliegue anterior
+firebase hosting:rollback
+
+# Crear un canal temporal para pruebas
+firebase hosting:channel:deploy nombre_test --expires 1d
+
+# Ver historial de despliegues
+firebase hosting:channel:list
+
+# Desplegar solo hosting (sin afectar otros servicios)
+firebase deploy --only hosting
+```
+
+### Integración con Firebase
+
+https://console.firebase.google.com/project/angular-firebase-hub/overview?onboardingAssistance=true
+
+Este proyecto (`angular-firebase-hub`) integra Firebase como backend para proporcionar:
+- Base de datos NoSQL (Firestore)
+- Autenticación de usuarios
+- Almacenamiento de archivos
+- Hosting con CDN global
+
+#### 1. Configuración Básica
+
+```bash
+# Instalar dependencias
+npm install firebase @angular/fire
+```
+
+**environment.ts**:
+```typescript
+export const environment = {
+  firebase: {
+    apiKey: "TU_API_KEY",
+    authDomain: "tu-proyecto.firebaseapp.com",
+    projectId: "tu-proyecto",
+    storageBucket: "tu-proyecto.appspot.com",
+    messagingSenderId: "TU_MESSAGING_SENDER_ID",
+    appId: "TU_APP_ID"
+  }
+};
+```
+
+**app.config.ts**:
+```typescript
+providers: [
+  provideFirebaseApp(() => initializeApp(environment.firebase)),
+  provideFirestore(() => getFirestore()),
+  provideAuth(() => getAuth())
+]
+```
+
+#### 2. Estructura de Datos
+
+```
+firestore/
++-- users/
+¦   +-- {userId}/
+¦       +-- email
+¦       +-- displayName
+¦       +-- role
++-- cycles/
+    +-- {cycleId}/
+        +-- name
+        +-- startDate
+        +-- endDate
+```
+
+#### 3. Uso en Servicios
+
+```typescript
+@Injectable({ providedIn: 'root' })
+export class UserService {
+  constructor(private firestore: Firestore) {}
+
+  getUsers(): Observable<User[]> {
+    return collectionData(collection(this.firestore, 'users'));
+  }
+
+  addUser(user: User) {
+    return addDoc(collection(this.firestore, 'users'), user);
+  }
+}
+```
+
+#### 4. Reglas de Seguridad
+
+```typescript
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{userId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth.uid == userId;
+    }
+  }
+}
+```
+
+#### 5. Plan Gratuito
+- 1GB almacenamiento
+- 50,000 lecturas/día
+- 20,000 escrituras/día
+- Perfecto para desarrollo y apps pequeñas
+
+#### 6. Pasos en Firebase Console
+1. Crear proyecto en [console.firebase.google.com](https://console.firebase.google.com)
+2. Obtener credenciales (Configuración del Proyecto > App Web)
+3. Habilitar Authentication y Firestore
+4. Configurar métodos de autenticación deseados
+
+### Despliegue con Firebase Hosting
+
+Firebase Hosting ofrece una alternativa a Vercel para el despliegue de aplicaciones Angular, con ventajas como CDN global, HTTPS automático y mejor integración con servicios Firebase.
+
+#### Preparación (una sola vez en tu computadora)
+```bash
+# Instalar Firebase CLI globalmente
+npm install -g firebase-tools
+
+# Iniciar sesión en Firebase
+firebase login
+
+Activar Firestore:
+  Ve a https://console.firebase.google.com/project/angular-firebase-hub/firestore
+  Haz clic en "Crear base de datos"
+  Se te presentarán dos opciones para el modo de seguridad:
+  ? Selecciona "Comenzar en modo de prueba"
+  Este modo permite lecturas/escrituras durante 30 días, perfecto para desarrollo
+  Selecciona la ubicación del servidor:
+  Recomiendo "eur3 (europe-west)" para Europa
+  O la región más cercana a tus usuarios objetivo
+
+Después de activar Firestore, Vuelve a la terminal
+```
+
+#### Configuración por Proyecto
+```bash
+# Inicializar Firebase en el proyecto
+firebase init
+
+# Seleccionar opciones:
+# ? Firestore: Configure security rules and indexes files for Firestore
+# ? Hosting: Configure files for Firebase Hosting
+# ? Storage: Configure a security rules file for Cloud Storage
+# ? Use an existing project
+# ? Select: angular-firebase-hub
+# ? Firestore Setup:
+#   - What file should be used for Firestore Rules? (firestore.rules)
+#   - What file should be used for Firestore indexes? (firestore.indexes.json)
+# ? Storage Setup:
+#   - What file should be used for Storage Rules? (storage.rules)
+# ? Hosting Setup:
+#   - What do you want to use as your public directory? dist/ng-shape-up
+#   - Configure as a single-page app (rewrite all urls to /index.html)? Yes
+#   - Set up automatic builds and deploys with GitHub? No
+
+  Firebase initialization complete!
+```
+
+Notas importantes:
+- Firestore debe estar activado previamente en la consola de Firebase
+- Se recomienda comenzar en modo de prueba para desarrollo
+- La ubicación del servidor recomendada es "eur3 (europe-west)" para Europa
+- Los archivos de reglas se crearán automáticamente en tu proyecto
+
+#### Configuración de firebase.json
+```json
+{
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "hosting": {
+    "public": "dist/ng-shape-up",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  },
+  "storage": {
+    "rules": "storage.rules"
+  }
+}
+```
+
+#### Despliegue manual
+```bash
+# Durante firebase init cuando pregunté:
+   ? Set up automatic builds and deploys with GitHub? No  # no se despliega automatico
+
+# Construir la aplicación
+ng build
+
+# Desplegar a Firebase
+firebase deploy --only hosting
+```
+
+#### Despliegue automatico
+```bash
+# Reinicializar Firebase con la opción de GitHub Actions
+firebase init hosting:github
+
+# Durante la configuración, selecciona:
+? For which GitHub repository would you like to set up a GitHub workflow? (format: user/repository)
+# Ingresa tu nombre de usuario y repositorio, por ejemplo: feriveragom/ng-shape-up
+
+? Set up the workflow to run a build script before every deploy? Yes
+
+? What script should be run before every deploy? npm ci && ng build
+  # npm ci instala las dependencias de forma limpia y determinista
+  # ng build es el comando específico de Angular para construir la aplicación
+
+? Set up automatic deployment to your site's live channel when a PR is merged? Yes
+
+? What is the name of the GitHub branch associated with your site's live channel? main
+
++  Firebase initialization complete!
+
+  git add .
+  git commit -m "Despliegue automatico para firebase"
+  git push origin main
+
+  Después del despliegue, tu aplicación estará disponible en:
+  https://angular-firebase-hub.web.app
+  https://angular-firebase-hub.firebaseapp.com
+  Para verificar el estado de los despliegues puedes:
+  Ver los despliegues en GitHub Actions (en tu repositorio)
+  Usar el comando firebase hosting:list
+```
+
+#### URLs de Acceso
+Tu aplicación estará disponible en:
+- `https://angular-firebase-hub.web.app`
+- `https://angular-firebase-hub.firebaseapp.com`
+
+#### Ventajas sobre Vercel
+1. **Integración con Firebase**:
+   - Mejor comunicación con Firestore
+   - Menor latencia en operaciones de base de datos
+   - Configuración unificada
+
+2. **Características Adicionales**:
+   - CDN global de Google
+   - HTTPS automático
+   - Rollback con un clic
+   - Panel de control unificado
+
+3. **Rendimiento**:
+   - Caché automático
+   - Optimización de assets
+   - Compresión automática
+
+4. **Comandos Útiles**:
+```bash
+# Ver lista de despliegues
+firebase hosting:list
+
+# Rollback al último despliegue
+firebase hosting:rollback
+
+# Desplegar a un canal preview (para pruebas)
+firebase hosting:channel:deploy preview_name
+```
+
+#### Migración desde Vercel
+1. Desactivar auto-despliegues en Vercel
+2. Configurar Firebase según los pasos anteriores
+3. Actualizar URLs en documentación y servicios
+4. (Opcional) Eliminar proyecto de Vercel
+
+### Solución de Problemas con Environments
+
+Cuando se realizan cambios en la configuración de environments o se experimentan problemas con la compilación, puedes seguir estos pasos:
+
+```bash
+# 1. Detener el servidor de desarrollo
+# Presiona Ctrl+C si tienes ng serve corriendo
+
+# 2. Limpiar la caché de Angular
+rm -rf .angular/cache
+# Este comando elimina la caché de Angular, lo que ayuda a resolver problemas
+# de compilación después de cambios en la configuración
+
+# 3. Iniciar el servidor en modo desarrollo
+ng serve
+# Este comando inicia la aplicación en modo desarrollo
+# Usa environment.development.ts
+# Permite ver cambios en tiempo real
+# URL: http://localhost:4200
+
+# 4. Verificar el build de producción
+ng build
+# Este comando construye la aplicación en modo producción
+# Usa environment.ts (producción)
+# Genera los archivos optimizados en la carpeta dist/
+# Este es el comando que se usa antes de desplegar a Firebase
+
+Channels for site angular-firebase-hub
+
++---------------------------------------------------------------------------------------+
+¦ Channel ID ¦ Last Release Time   ¦ URL                                  ¦ Expire Time ¦
++------------+---------------------+--------------------------------------+-------------¦
+¦ live       ¦ 2025-04-10 16:03:58 ¦ https://angular-firebase-hub.web.app ¦ never   
+```
+
+#### ¿Qué logras con cada paso?
+
+1. **Detener el servidor**: Asegura que no hay procesos previos interfiriendo
+2. **Limpiar caché**: 
+   - Elimina archivos temporales de compilación
+   - Resuelve problemas de configuración obsoleta
+   - Fuerza una compilación limpia
+3. **Modo desarrollo**:
+   - Verifica que la aplicación funciona en entorno local
+   - Usa la configuración de desarrollo
+   - Permite desarrollo y pruebas rápidas
+4. **Build producción**:
+   - Verifica que la aplicación se puede construir para producción
+   - Genera archivos optimizados para despliegue
+   - Usa la configuración de producción

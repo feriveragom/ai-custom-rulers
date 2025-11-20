@@ -1,0 +1,10 @@
+name: meratenencia-okteto-dark
+image: elixir:1.14.0-rc.0-alpine
+workdir: /app/meratenencia
+autocreate: true
+command: ["sh"]
+forward:
+  - 3000:4000
+  - 4369:4369
+persistentVolume:
+  enabled: true
