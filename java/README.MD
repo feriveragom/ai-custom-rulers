@@ -68,27 +68,35 @@ VSCode PATH Para proyectos que usan JDK 21>
 ```bash
 mvn clean install
 ```
+
 - Para compilar y empaquetar el proyecto sin ejecutar tests
 ```bash
 mvn clean install -DskipTests
 ```
+
 - Para compilar y empaquetar el proyecto sin ejecutar tests y sin construir la imagen Docker
 ```bash
 mvn clean install -DskipTests -Ddockerfile.skip=true
 ```
+
 - Para ejecutar la aplicación directamente desde Maven
 ```bash
 mvn spring-boot:run
 ```
+
+- Salidas
+```
   - Acceder a la app en el navegador: http://localhost:8080
   - Ver logs en tiempo real en la terminal
   - Hacer cambios en el código y se recargan automáticamente
+```
 
 - Para consultar el estado del servicio por consola una vez levantado
 ```bash
 curl http://localhost:8080/cl/idabi/info
 ```
-Respuesta esperada:
+
+- Respuesta esperada:
 ```json
 {"service":"comprador_boleta_informativa","active_profile":"Local","status":"Started OK"}
 ```
