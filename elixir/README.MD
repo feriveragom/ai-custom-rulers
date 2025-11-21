@@ -14,13 +14,29 @@ S
 ## Instalar Erlang/OTP 25 y Elixir 1.14
 ```bash
 scoop --version
-scoop bucket add versions
-scoop install erlang@25.3.2.14
-scoop install elixir@1.14.5
+scoop uninstall erlang && scoop uninstall elixir
+scoop bucket add versions && scoop install erlang@24.3.4.17 && scoop install elixir@1.14.5
 ```
 
 ### Verificar en consola recargada
 ```bash
- elixir --version
+elixir --version && erl -version
 ```
 
+### Agregar a PATH del sistema
+```bash
+scoop prefix elixir
+    C:\Users\mypc\scoop\apps\elixir\current
+
+scoop prefix erlang
+    C:\Users\mypc\scoop\apps\erlang\current
+```
+
+```PATH
+C:\Users\mypc\scoop\apps\elixir\current\bin
+C:\Users\mypc\scoop\apps\erlang\current\bin
+```
+
+```bash
+elixir --version && erl -version
+```
