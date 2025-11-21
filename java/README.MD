@@ -48,8 +48,6 @@ VSCode PATH Para proyectos que usan JDK 21>
     vscjava.vscode-java-pack
 2- Spring Boot Extension Pack: - Para reconocer y ejecutar Spring Boot
     vmware.vscode-boot-dev-pack
-3- Lombok Annotations Support for VS Code: Reconoce las anotaciones de Lombok (@Data, @Getter, @Setter, etc.)
-    vscjava.vscode-lombok
 ```
 
 # comprador_boleta_informativa: 
