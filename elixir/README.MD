@@ -1,6 +1,6 @@
 # Instalación Manual de Erlang/OTP 25 y Elixir 1.14
 
-## Instalar Scoop. Abre PowerShell como administrador.	(Power Shell)
+## Instalar Scoop. Abre PowerShell como administrador. (Power Shell)
 
 ### Establecer la seguridad SSL/TLS manualmente para permitir la descarga del script de instalación.
 ```cmd
@@ -20,10 +20,6 @@ scoop prefix erlang
     C:\Users\mypc\scoop\apps\erlang\current
 ```
 
-```PATH ENV
-C:\Users\mypc\scoop\apps\erlang\current\bin
-```
-
 ## Compilar elixir con Erlang/OTP 25 desde el código fuente
 ```bash
 scoop install make
@@ -35,19 +31,19 @@ Nota: No usar -> scoop install elixir@1.14.0-rc.0 porque instala Elixir 1.14 com
 Nota: No usar -> scoop install elixir@1.14 porque instala Elixir 1.14 compilado con Erlang/OTP 24
 ```
 
-### Agregar a PATH del sistema
-```bash
-scoop prefix elixir
-    C:\Users\mypc\scoop\apps\elixir\current
-```
-
-```PATH ENV
+## Agregar a PATH del sistema (SystemPropertiesAdvanced)
+```PATH ENV SystemPropertiesAdvanced
+C:\Users\mypc\scoop\apps\erlang\current\bin
 C:\Users\mypc\scoop\apps\elixir\current\bin
 ```
 
 ```bash
-elixir --version && erl -version
+elixir --version && erl -version && mix --version
     Erlang/OTP 25 [erts-13.0.4] [source] [64-bit] [smp:12:12] [ds:12:12:10] [async-threads:1] [jit:ns]
+
     Elixir 1.14.0-rc.0 (6449239) (compiled with Erlang/OTP 25)
     Erlang (SMP,ASYNC_THREADS) (BEAM) emulator version 13.0.4
+    Erlang/OTP 25 [erts-13.0.4] [source] [64-bit] [smp:12:12] [ds:12:12:10] [async-threads:1] [jit:ns]
+
+    Mix 1.14.0-rc.0 (6449239) (compiled with Erlang/OTP 25)
 ```
