@@ -4,7 +4,8 @@ JAVA
     vscjava.vscode-lombok
 
 ELIXIR
-    elixir-lsp.elixir-ls
+    jakebecker.elixir-ls (0.21.3)
+    mjmcloug.vscode-elixir (1.1.0)
 
 GIT
     eamodio.gitlens
