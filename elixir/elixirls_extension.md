@@ -106,5 +106,18 @@ powershell -c "& 'C:\Users\mypc\.vscode\extensions\jakebecker.elixir-ls-0.13.0\e
 #### Archivo: C:\Users\mypc\.vscode\extensions\jakebecker.elixir-ls-0.21.3\out\extension.js
 #### Modificación: Agregar {shell:true} al spawn para Windows
 ```bash
+# Navegar al directorio de la extensión
+cd C:/Users/mypc/.vscode/extensions/jakebecker.elixir-ls-0.21.3/out
+
+# Aplicar el parche con sed
 sed -i 's/zp\.spawn(\([^,]*\),\([^,]*\),\([^)]*\))/zp.spawn(\1,\2,Object.assign({shell:true},\3))/g' extension.js
+```
+
+## Romper/Reparar la extension ElixirLS, renombrando el archivo `elixir.ps1`:
+```bash
+# ROMPER - Renombrar elixir.ps1
+mv "C:/Users/mypc/scoop/apps/elixir/current/bin/elixir.ps1" "C:/Users/mypc/scoop/apps/elixir/current/bin/elixir.ps1.BROKEN"
+
+# REPARAR - Restaurar elixir.ps1
+mv "C:/Users/mypc/scoop/apps/elixir/current/bin/elixir.ps1.BROKEN" "C:/Users/mypc/scoop/apps/elixir/current/bin/elixir.ps1"
 ```
